@@ -135,7 +135,7 @@ class LSTM(nn.Module):
         super(self.__class__, self).__init__()
         self.input_size = input_size
         self.hidden_size = hidden_size
-        self.num_layers = 2
+        self.num_layers = num_layers
         self.device = device
         self.lstm = nn.LSTM(input_size, hidden_size, num_layers=num_layers, batch_first=True).to(device)
         self.hid_to_logits = nn.Linear(hidden_size, input_size).to(device)
